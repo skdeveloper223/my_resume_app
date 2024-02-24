@@ -68,19 +68,99 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              Container(
-                color: Colors.grey.withOpacity(0.4),
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.symmetric(vertical: 8),
-                child: Text("I am passionate software engineer, worked on various client’s base company. I believe " +
-                    "in learning new things and implementing it into my project and also deliver as per" +
-                    "client\'s requirement. Good knowledge of flutter, firebase and UI designing. also worked" +
-                    "on web services. Always ready for new challenges and like to learn something new."),
-              )
+              SizedBox(
+                height: 5,
+              ),
+              Divider(),
+              Wrap(
+                children: [
+                  Container(
+                    width: 220,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "WORK EXPERIENCE",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Container(
+                            // color: Colors.grey.withOpacity(0.4),
+                            padding: EdgeInsets.all(8),
+                            margin: EdgeInsets.symmetric(vertical: 8),
+                            child: const Text("2 Years as Android developer.\n3 Years as Flutter Developer.")),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "ABOUT ME",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Container(
+                          color: Colors.grey.withOpacity(0.4),
+                          padding: EdgeInsets.all(8),
+                          child: Text("I am passionate software engineer, worked on various client’s base company. I believe " +
+                              "in learning new things and implementing it into my project and also deliver as per" +
+                              "client\'s requirement. Good knowledge of flutter, firebase and UI designing. also worked" +
+                              "on web services. Always ready for new challenges and like to learn something new."),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "Skill",
+                style: TextStyle(fontSize: 20),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  _buildSkillRow("Java", 3.0),
+                  _buildSkillRow("Dart", 4.0),
+                  _buildSkillRow("Flutter", 4.0),
+                  _buildSkillRow("Firebase", 3.0),
+                  _buildSkillRow("Payment", 3.0),
+                  _buildSkillRow("Android", 4.0),
+                  _buildSkillRow("iOS", 4.0),
+                ],
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Row _buildSkillRow(String skill, double level) {
+    return Row(
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        const SizedBox(width: 16.0),
+        Expanded(
+            flex: 1,
+            child: Text(
+              skill.toUpperCase(),
+              textAlign: TextAlign.left,
+            )),
+        const SizedBox(width: 10.0),
+        Expanded(
+          flex: 2,
+          child: LinearProgressIndicator(
+            value: level,
+          ),
+        ),
+        const SizedBox(width: 16.0),
+      ],
     );
   }
 }
