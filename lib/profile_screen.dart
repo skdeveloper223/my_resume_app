@@ -117,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 5,
               ),
               Text(
-                "Skill",
+                "SKILL",
                 style: TextStyle(fontSize: 20),
               ),
               Column(
