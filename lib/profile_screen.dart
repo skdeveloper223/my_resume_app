@@ -68,6 +68,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
+              Container(
+                color: Colors.grey.withOpacity(0.4),
+                padding: EdgeInsets.all(8),
+                margin: EdgeInsets.symmetric(vertical: 8),
+                child: Text("I am passionate software engineer, worked on various client’s base company. I believe " +
+                    "in learning new things and implementing it into my project and also deliver as per" +
+                    "client\'s requirement. Good knowledge of flutter, firebase and UI designing. also worked" +
+                    "on web services. Always ready for new challenges and like to learn something new."),
+              )
             ],
           ),
         ),
